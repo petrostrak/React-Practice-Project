@@ -5,7 +5,7 @@ var appRoot = document.getElementById('app');
 
 var template = React.createElement(
     "h1",
-    {id: "someid"},
+    {id: "app"},
     "Something new!"
 );
 
