@@ -46,15 +46,19 @@ var userName = 'Petros Trakadas';
 var userAge = 33;
 var userLocation = 'Alimos';
 
-function getLocation(location) {
-    if (location) {
-        return React.createElement(
-            'p',
-            null,
-            location
-        );
-    }
-}
+// function getLocation(location){
+//     if(location){
+//         return <p>{location}</p>;
+//     }
+// }
+
+var getLocation = function getLocation(location) {
+    if (location) return React.createElement(
+        'p',
+        null,
+        location
+    );
+};
 
 var user = {
     firstName: 'Petros',
@@ -83,4 +87,4 @@ var templateTwo = React.createElement(
 
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(template, appRoot);
+ReactDOM.render(templateTwo, appRoot);

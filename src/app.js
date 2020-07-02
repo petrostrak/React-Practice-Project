@@ -23,10 +23,14 @@ var userName = 'Petros Trakadas'
 var userAge = 33
 var userLocation = 'Alimos'
 
-function getLocation(location){
-    if(location){
-        return <p>{location}</p>;
-    }
+// function getLocation(location){
+//     if(location){
+//         return <p>{location}</p>;
+//     }
+// }
+
+const getLocation = (location) =>{
+    if(location) return <p>{location}</p>;
 }
 
 var user = {
@@ -45,4 +49,4 @@ var templateTwo = (
 
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(template, appRoot);
+ReactDOM.render(templateTwo, appRoot);
