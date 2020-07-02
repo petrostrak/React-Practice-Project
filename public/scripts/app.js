@@ -44,8 +44,9 @@ var renderArray = function renderArray() {
     React.createElement(
       'p',
       null,
-      appObject.options.length > 0 ? 'You have ' + appObject.options.length + ' option(s): ' + appObject.options : 'You have no options available'
+      appObject.options.length > 0 ? 'You have ' + appObject.options.length + ' option(s).' : 'You have no options available'
     ),
+    ' ',
     React.createElement(
       'button',
       { onClick: onRemoveAll },
@@ -54,16 +55,13 @@ var renderArray = function renderArray() {
     React.createElement(
       'ol',
       null,
-      React.createElement(
-        'li',
-        null,
-        'Item one'
-      ),
-      React.createElement(
-        'li',
-        null,
-        'Item two'
-      )
+      appObject.options.map(function (option) {
+        return React.createElement(
+          'li',
+          null,
+          option
+        );
+      })
     ),
     React.createElement(
       'form',

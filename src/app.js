@@ -30,11 +30,10 @@ const renderArray = () => {
     <div>
       <h1>{appObject.title}</h1>
       {appObject.subtitle && <p>{appObject.subtitle}</p>}
-      <p>{appObject.options.length > 0 ? 'You have '+ appObject.options.length +' option(s): ' + appObject.options : 'You have no options available'}</p>
+      <p>{appObject.options.length > 0 ? 'You have '+ appObject.options.length +' option(s).': 'You have no options available'}</p> {/*: ' + appObject.options */}
       <button onClick={onRemoveAll}>Remove all</button>
       <ol>
-        <li>Item one</li>
-        <li>Item two</li>
+        {appObject.options.map((option)=>{return <li>{option}</li>;})}
       </ol>
       <form onSubmit={onFormSubmit}>
         <input type="text" name="option" />
