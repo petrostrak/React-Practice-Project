@@ -47,6 +47,17 @@ var templateTwo = (
     </div>
 );
 
+let count = 0;
+
+const templateTree = (
+  <div>
+    <h1>Count : {count}</h1>
+    <button onClick={()=>{console.log('addOne')}}>+1</button>
+    <button onClick={()=>{console.log('minusOne')}}>-1</button>
+    <button onClick={()=>{console.log('reseted')}}>Reset</button>
+  </div>
+);
+
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(templateTree, appRoot);
