@@ -2,14 +2,16 @@ console.log('App.js is running!');
 
 var appObject = {
     title: 'React Practice Project',
-    subtitle: 'I hate js!'
+    subtitle: 'I hate js!',
+    options: ['Option No.1', 'Option No.2', 'Option No.3']
 }
 
 // JSX - JavaScript XML
 var template = (
   <div>
     <h1>{appObject.title}</h1>
-    <p>{appObject.subtitle}</p>
+    {appObject.subtitle && <p>{appObject.subtitle}</p>}
+    <p>{appObject.options.length > 0 ? 'You have these options: ' + appObject.options : 'You have no options available'}</p>
     <ol>
       <li>Item one</li>
       <li>Item two</li>
@@ -36,15 +38,11 @@ var user = {
 var templateTwo = (
     <div>
         <h1>{user.firstName ? user.firstName : 'Unknown first name'}, {user.lastName ? user.lastName : 'Unknown last name'}</h1>
-<<<<<<< HEAD
         {user.age >= 18 && <p>Age: {user.age}</p>}
-=======
-        <p>Age: {user.age ? user.age : 'Unknown age'}</p>
->>>>>>> master
         {getLocation(user.location)}
     </div>
 );
 
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);
