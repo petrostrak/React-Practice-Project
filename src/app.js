@@ -33,7 +33,7 @@ const renderArray = () => {
       <p>{appObject.options.length > 0 ? 'You have '+ appObject.options.length +' option(s).': 'You have no options available'}</p> {/*: ' + appObject.options */}
       <button onClick={onRemoveAll}>Remove all</button>
       <ol>
-        {appObject.options.map((option)=>{return <li>{option}</li>;})}
+        {appObject.options.map((option)=>{return <li key={option}>{option}</li>;})}
       </ol>
       <form onSubmit={onFormSubmit}>
         <input type="text" name="option" />

@@ -58,7 +58,7 @@ var renderArray = function renderArray() {
       appObject.options.map(function (option) {
         return React.createElement(
           'li',
-          null,
+          { key: option },
           option
         );
       })
