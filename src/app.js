@@ -21,6 +21,12 @@ var userName = 'Petros Trakadas'
 var userAge = 33
 var userLocation = 'Alimos'
 
+function getLocation(location){
+    if(location){
+        return <p>{location}</p>;
+    }
+}
+
 var user = {
     firstName: 'Petros',
     lastName: 'Trakadas',
@@ -31,10 +37,10 @@ var templateTwo = (
     <div>
         <h1>{user.firstName}, {user.lastName}</h1>
         <p>Age: {user.age}</p>
-        <p>Location: {user.location}</p>
+        {getLocation(user.location)}
     </div>
 );
 
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(template, appRoot);
+ReactDOM.render(templateTwo, appRoot);
