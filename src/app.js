@@ -1,9 +1,25 @@
 console.log('App.js is running!');
 
-var template = <p>Does this change?</p>
+// JSX - JavaScript XML
+var template = (
+  <div>
+    <h1>Indecision App</h1>
+    <p>This is some info</p>
+    <ol>
+      <li>Item one</li>
+      <li>Item two</li>
+    </ol>
+  </div>
+);
+
+var templateTwo = (
+    <div>
+        <h1>Petros Trak</h1>
+        <p>Age: 34</p>
+        <p>Location: Athens, Greece</p>
+    </div>
+);
+
 var appRoot = document.getElementById('app');
 
-// render gets two parameters. 1st is 'what' and 2nd is 'where'
-// What do you want to render and
-// Where do you want to render it
-ReactDOM.render(template, appRoot);
+ReactDOM.render(templateTwo, appRoot);
