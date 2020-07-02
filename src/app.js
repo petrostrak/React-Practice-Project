@@ -22,6 +22,13 @@ const onRemoveAll = ()=>{
   renderArray();
 };
 
+const onMakeDecision = ()=>{
+  const randomNumber = Math.floor(Math.random() * appObject.options.length);
+  console.log(randomNumber);
+  const option = appObject.options[randomNumber];
+  alert(option);
+};
+
 var appRoot = document.getElementById('app');
 
 const renderArray = () => {
@@ -32,6 +39,7 @@ const renderArray = () => {
       {appObject.subtitle && <p>{appObject.subtitle}</p>}
       <p>{appObject.options.length > 0 ? 'You have '+ appObject.options.length +' option(s).': 'You have no options available'}</p> {/*: ' + appObject.options */}
       <button onClick={onRemoveAll}>Remove all</button>
+      <button disabled={appObject.options.length === 0} onClick={onMakeDecision}>What should I do</button>
       <ol>
         {appObject.options.map((option)=>{return <li key={option}>{option}</li>;})}
       </ol>
