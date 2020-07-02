@@ -49,15 +49,23 @@ var templateTwo = (
 
 let count = 0;
 
-const templateTree = (
-  <div>
-    <h1>Count : {count}</h1>
-    <button onClick={()=>{console.log('addOne')}}>+1</button>
-    <button onClick={()=>{console.log('minusOne')}}>-1</button>
-    <button onClick={()=>{console.log('reseted')}}>Reset</button>
-  </div>
-);
+const addOne = ()=>{count++;console.log('addOne',count);renderCounterApp();};
+const minusOne = ()=>{count--;console.log('minusOne',count);renderCounterApp();};
+const resetCounter = ()=>{count =0;console.log('reseted',count);renderCounterApp();};
 
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(templateTree, appRoot);
+const renderCounterApp = () =>{
+  const templateTree = (
+    <div>
+      <h1>Count : {count}</h1>
+      <button onClick={addOne}>+1</button>
+      <button onClick={minusOne}>-1</button>
+      <button onClick={resetCounter}>Reset</button>
+    </div>
+  );
+  
+  ReactDOM.render(templateTree, appRoot);
+}
+
+renderCounterApp();

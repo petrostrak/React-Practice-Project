@@ -87,38 +87,46 @@ var templateTwo = React.createElement(
 
 var count = 0;
 
-var templateTree = React.createElement(
-  'div',
-  null,
-  React.createElement(
-    'h1',
-    null,
-    'Count : ',
-    count
-  ),
-  React.createElement(
-    'button',
-    { onClick: function onClick() {
-        console.log('addOne');
-      } },
-    '+1'
-  ),
-  React.createElement(
-    'button',
-    { onClick: function onClick() {
-        console.log('minusOne');
-      } },
-    '-1'
-  ),
-  React.createElement(
-    'button',
-    { onClick: function onClick() {
-        console.log('reseted');
-      } },
-    'Reset'
-  )
-);
+var addOne = function addOne() {
+  count++;console.log('addOne', count);renderCounterApp();
+};
+var minusOne = function minusOne() {
+  count--;console.log('minusOne', count);renderCounterApp();
+};
+var resetCounter = function resetCounter() {
+  count = 0;console.log('reseted', count);renderCounterApp();
+};
 
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(templateTree, appRoot);
+var renderCounterApp = function renderCounterApp() {
+  var templateTree = React.createElement(
+    'div',
+    null,
+    React.createElement(
+      'h1',
+      null,
+      'Count : ',
+      count
+    ),
+    React.createElement(
+      'button',
+      { onClick: addOne },
+      '+1'
+    ),
+    React.createElement(
+      'button',
+      { onClick: minusOne },
+      '-1'
+    ),
+    React.createElement(
+      'button',
+      { onClick: resetCounter },
+      'Reset'
+    )
+  );
+
+  ReactDOM.render(templateTree, appRoot);
+};
+
+renderCounterApp();
