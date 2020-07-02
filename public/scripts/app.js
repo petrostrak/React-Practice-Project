@@ -62,15 +62,15 @@ var templateTwo = React.createElement(
     React.createElement(
         'h1',
         null,
-        user.firstName,
+        user.firstName ? user.firstName : 'Unknown first name',
         ', ',
-        user.lastName
+        user.lastName ? user.lastName : 'Unknown last name'
     ),
     React.createElement(
         'p',
         null,
         'Age: ',
-        user.age
+        user.age ? user.age : 'Unknown age'
     ),
     getLocation(user.location)
 );

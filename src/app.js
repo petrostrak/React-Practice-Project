@@ -35,8 +35,8 @@ var user = {
 }
 var templateTwo = (
     <div>
-        <h1>{user.firstName}, {user.lastName}</h1>
-        <p>Age: {user.age}</p>
+        <h1>{user.firstName ? user.firstName : 'Unknown first name'}, {user.lastName ? user.lastName : 'Unknown last name'}</h1>
+        <p>Age: {user.age ? user.age : 'Unknown age'}</p>
         {getLocation(user.location)}
     </div>
 );
