@@ -1,5 +1,5 @@
 class Counter extends React.Component{
-
+  
   constructor(props){
     super(props);
     this.handleAddOne = this.handleAddOne.bind(this);
@@ -29,7 +29,7 @@ class Counter extends React.Component{
   handleReset(){
     this.setState(()=>{
       return{
-        counter: 0
+        counter:
       }
     })
   }
