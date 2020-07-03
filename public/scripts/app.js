@@ -74,10 +74,13 @@ var Header = function (_React$Component2) {
 var Action = function (_React$Component3) {
   _inherits(Action, _React$Component3);
 
-  function Action() {
+  function Action(props) {
     _classCallCheck(this, Action);
 
-    return _possibleConstructorReturn(this, (Action.__proto__ || Object.getPrototypeOf(Action)).apply(this, arguments));
+    var _this3 = _possibleConstructorReturn(this, (Action.__proto__ || Object.getPrototypeOf(Action)).call(this, props));
+
+    _this3.handlePick = _this3.handlePick.bind(_this3);
+    return _this3;
   }
 
   _createClass(Action, [{
@@ -106,16 +109,19 @@ var Action = function (_React$Component3) {
 var Options = function (_React$Component4) {
   _inherits(Options, _React$Component4);
 
-  function Options() {
+  function Options(props) {
     _classCallCheck(this, Options);
 
-    return _possibleConstructorReturn(this, (Options.__proto__ || Object.getPrototypeOf(Options)).apply(this, arguments));
+    var _this4 = _possibleConstructorReturn(this, (Options.__proto__ || Object.getPrototypeOf(Options)).call(this, props));
+
+    _this4.handleRemoveAll = _this4.handleRemoveAll.bind(_this4);
+    return _this4;
   }
 
   _createClass(Options, [{
     key: 'handleRemoveAll',
     value: function handleRemoveAll() {
-      alert('handleRemoveAll');
+      console.log(this.props.options);
     }
   }, {
     key: 'render',
