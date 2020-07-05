@@ -76,10 +76,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 console.log('app.js is running!!!');
-console.log(__WEBPACK_IMPORTED_MODULE_0__utils__["b" /* square */](4));
+console.log(__WEBPACK_IMPORTED_MODULE_0__utils__["c" /* square */](4));
 console.log(__WEBPACK_IMPORTED_MODULE_0__utils__["a" /* add */](3, 7));
-console.log(__WEBPACK_IMPORTED_MODULE_1__person__["b" /* isAdult */](16));
+console.log(__WEBPACK_IMPORTED_MODULE_0__utils__["b" /* default */](3, 7));
+console.log(__WEBPACK_IMPORTED_MODULE_1__person__["c" /* isAdult */](16));
 console.log(__WEBPACK_IMPORTED_MODULE_1__person__["a" /* canDrink */](21));
+console.log(__WEBPACK_IMPORTED_MODULE_1__person__["b" /* default */](65));
 
 /***/ }),
 /* 1 */
@@ -89,25 +91,31 @@ console.log(__WEBPACK_IMPORTED_MODULE_1__person__["a" /* canDrink */](21));
 console.log('utils.js is running!!')
 
 const square = (x) => x * x;
-/* harmony export (immutable) */ __webpack_exports__["b"] = square;
+/* harmony export (immutable) */ __webpack_exports__["c"] = square;
 
 const add = (a, b) => a + b;
 /* harmony export (immutable) */ __webpack_exports__["a"] = add;
 
+//const subtract = (a, b) => a - b;
 
-//export {square, add}
+/* harmony default export */ __webpack_exports__["b"] = ((a, b) => a - b);
+//export default subtract;
+//export {square, add, subtract as default};
 
 /***/ }),
 /* 2 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return isAdult; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return canDrink; });
 const isAdult = (age) => age >= 18;
+/* harmony export (immutable) */ __webpack_exports__["c"] = isAdult;
+
 const canDrink = (age) => age >= 21;
+/* harmony export (immutable) */ __webpack_exports__["a"] = canDrink;
 
+const isSenior = (age) => age >= 65;
 
+/* harmony default export */ __webpack_exports__["b"] = ((age) => age >= 65);
 
 /***/ })
 /******/ ]);
