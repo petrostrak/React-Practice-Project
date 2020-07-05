@@ -1,63 +1,33 @@
-class Visibility extends React.Component{
-
-  constructor(props){
+class VisibilityToggle extends React.Component {
+  constructor(props) {
     super(props);
-    this.toggleVisibility = this.toggleVisibility.bind(this);
+    this.handleToggleVisibility = this.handleToggleVisibility.bind(this);
     this.state = {
-      visibility : false
-    }
+      visibility: false
+    };
   }
-
-  toggleVisibility(){
-    this.setState((prevState)=>{
-      return{
-        visibility : !prevState.visibility
+  handleToggleVisibility() {
+    this.setState((prevState) => {
+      return {
+        visibility: !prevState.visibility
       };
     });
   }
-
-  render(){
+  render() {
     return (
-    <div>
-      <h1>Visibility Toggle</h1>
-      <button onClick={this.toggleVisibility}>
-        {this.state.visibility ? 'Hide details' : 'Show details'}
-      </button>
-      {this.state.visibility && (
-        <div>
-          <p>Hey. These are some details you can now see!</p>
-        </div>
-      )}
-    </div>
+      <div>
+        <h1>Visibility Toggle</h1>
+        <button onClick={this.handleToggleVisibility}>
+          {this.state.visibility ? 'Hide details' : 'Show details'}
+        </button>
+        {this.state.visibility && (
+          <div>
+            <p>Hey. These are some details you can now see!</p>
+          </div>
+        )}
+      </div>
     );
   }
 }
 
-ReactDOM.render(<Visibility />, document.getElementById('app'));
-
-// let visibility = false;
-
-// const toggleVisibility = () => {
-//   visibility = !visibility;
-//   render();
-// };
-
-// const render = () => {
-//   const jsx = (
-//     <div>
-//       <h1>Visibility Toggle</h1>
-//       <button onClick={toggleVisibility}>
-//         {visibility ? 'Hide details' : 'Show details'}
-//       </button>
-//       {visibility && (
-//         <div>
-//           <p>Hey. These are some details you can now see!</p>
-//         </div>
-//       )}
-//     </div>
-//   );
-
-//   ReactDOM.render(jsx, document.getElementById('app'));
-// };
-
-// render();
+ReactDOM.render(<VisibilityToggle />, document.getElementById('app'));
