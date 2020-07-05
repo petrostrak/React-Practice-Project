@@ -6,7 +6,7 @@ class IndecisionApp extends React.Component {
     this.handleAddOption = this.handleAddOption.bind(this);
     this.handleDeleteOption = this.handleDeleteOption.bind(this);
     this.state = {
-      options: props.options
+      options: []
     };
   }
 
@@ -37,12 +37,6 @@ class IndecisionApp extends React.Component {
 
   handleDeleteOptions() {
     this.setState(()=>({options:[]})); //We return an object. 
-
-    // this.setState(() => {
-    //   return {
-    //     options: []
-    //   };
-    // });
   }
   handleDeleteOption(optionToRemove){
     this.setState((prevState)=>({
@@ -92,10 +86,6 @@ class IndecisionApp extends React.Component {
   }
 }
 
-IndecisionApp.defaultProps = {
-  options : []
-}
-
 const Header = (props) =>{
   return (
     <div>
@@ -108,17 +98,6 @@ const Header = (props) =>{
 Header.defaultProps = {
   title: 'Indecision'
 }
-
-// class Header extends React.Component {
-//   render() {
-//     return (
-//       <div>
-//         <h1>{this.props.title}</h1>
-//         <h2>{this.props.subtitle}</h2>
-//       </div>
-//     );
-//   }
-// }
 
 const Action = (props) =>{
   return (
@@ -133,21 +112,6 @@ const Action = (props) =>{
   );  
 }
 
-// class Action extends React.Component {
-//   render() {
-//     return (
-//       <div>
-//         <button
-//           onClick={this.props.handlePick}
-//           disabled={!this.props.hasOptions}
-//         >
-//           What should I do?
-//         </button>
-//       </div>
-//     );
-//   }
-// }
-
 const Options = (props) =>{
   return (
     <div>
@@ -158,19 +122,6 @@ const Options = (props) =>{
   );  
 }
 
-// class Options extends React.Component {
-//   render() {
-//     return (
-//       <div>
-//         <button onClick={this.props.handleDeleteOptions}>Remove All</button>
-//         {
-//           this.props.options.map((option) => <Option key={option} optionText={option} />)
-//         }
-//       </div>
-//     );
-//   }
-// }
-
 const Option = (props) =>{
   return (
     <div>
@@ -179,16 +130,6 @@ const Option = (props) =>{
     </div>
   );  
 }
-
-// class Option extends React.Component {
-//   render() {
-//     return (
-//       <div>
-//         {this.props.optionText}
-//       </div>
-//     );
-//   }
-// }
 
 class AddOption extends React.Component {
   constructor(props) {
@@ -205,10 +146,6 @@ class AddOption extends React.Component {
     const error = this.props.handleAddOption(option);
 
        this.setState(()=>({error}));
-
-    // this.setState(() => {
-    //   return { error };
-    // });
     
     if(!error){
       e.target.elements.option.value = '';
